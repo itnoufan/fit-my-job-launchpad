@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Award, Building2, FileSpreadsheet, Globe, DollarSign } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import WHATSAPP_URL from "./whatsapp";
 
@@ -7,9 +7,10 @@ interface Course {
   title: string;
   mode: string;
   badge?: string;
-  emoji: string;
+  icon: typeof Award;
   features: string[];
   tag?: string;
+  featured?: boolean;
 }
 
 const courses: Course[] = [
@@ -17,36 +18,37 @@ const courses: Course[] = [
     title: "UAE HR Management",
     mode: "Offline",
     badge: "Classroom Training",
-    emoji: "🔥",
+    icon: Award,
     features: ["UK Certification", "UAE Internship (Optional)", "HRMS + Compliance", "UAE Exposure", "Industrial Visit", "Job Support"],
     tag: "Most Popular",
+    featured: true,
   },
   {
     title: "UAE HR Management",
     mode: "Online",
     badge: "Live Online Training",
-    emoji: "💻",
+    icon: Globe,
     features: ["UK Certification", "UAE Internship (Optional)", "HRMS + Compliance", "UAE Exposure", "Job Support"],
   },
   {
     title: "Office Administration",
     mode: "Offline",
     badge: "Classroom Training",
-    emoji: "🧾",
+    icon: Building2,
     features: ["Excel, Word, PPT", "AI Tools", "Basic Accounting", "Job Assurance"],
   },
   {
     title: "Office Administration",
     mode: "Online",
     badge: "Online Training",
-    emoji: "🌐",
+    icon: FileSpreadsheet,
     features: ["Excel, Word, PPT", "AI Tools", "Basic Accounting", "Job Assurance"],
   },
   {
     title: "UAE Payroll",
     mode: "Live / Recorded",
     badge: "Live + Self-Paced",
-    emoji: "💰",
+    icon: DollarSign,
     features: ["Salary Structure", "PF, ESI, TDS", "UAE Payroll", "Indian Labour Law", "UAE Labour Law"],
   },
 ];
@@ -55,41 +57,47 @@ const CoursesSection = () => (
   <section className="section-padding bg-gradient-soft" id="courses">
     <div className="container space-y-12">
       <ScrollReveal>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-foreground">
-          Our <span className="text-gradient">Courses</span>
-        </h2>
-        <p className="text-center text-muted-foreground mt-3 max-w-lg mx-auto">
-          Choose the path that fits your goals
-        </p>
+        <div className="text-center space-y-3">
+          <p className="eyebrow">Programs</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
+            Choose Your Path
+          </h2>
+          <p className="text-muted-foreground mt-2 max-w-md mx-auto text-sm">
+            Industry-aligned courses designed for real career outcomes
+          </p>
+        </div>
       </ScrollReveal>
+
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {courses.map((c, i) => (
-          <ScrollReveal key={c.title + c.mode} delay={i * 0.08}>
-            <div className="relative bg-card rounded-2xl p-6 card-elevated card-hover flex flex-col h-full group">
+          <ScrollReveal key={c.title + c.mode} delay={i * 0.06}>
+            <div className={`relative bg-card rounded-2xl p-6 card-elevated card-hover flex flex-col h-full ${c.featured ? 'ring-2 ring-primary/15' : ''}`}>
               {c.tag && (
-                <span className="absolute -top-3 right-4 bg-gradient-cta text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
+                <span className="absolute -top-3 right-4 bg-primary text-primary-foreground text-xs font-semibold px-3.5 py-1 rounded-full">
                   {c.tag}
                 </span>
               )}
-              <div className="text-3xl mb-3">{c.emoji}</div>
-              <h3 className="font-bold text-lg text-foreground">{c.title}</h3>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{c.mode}</span>
+              <div className="w-10 h-10 rounded-lg bg-primary/8 flex items-center justify-center mb-4">
+                <c.icon size={20} className="text-primary" />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground">{c.title}</h3>
+              <div className="flex items-center gap-2 mb-4 mt-1">
+                <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">{c.mode}</span>
                 {c.badge && (
-                  <span className="text-[10px] font-semibold bg-primary/10 text-primary px-2 py-0.5 rounded-full">{c.badge}</span>
+                  <span className="text-[10px] font-medium bg-muted text-muted-foreground px-2 py-0.5 rounded-full">{c.badge}</span>
                 )}
               </div>
               <ul className="space-y-2.5 flex-1 mb-6">
                 {c.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                    <span className="text-accent font-bold mt-px">✓</span>
+                    <span className="text-accent mt-0.5">✓</span>
                     {f}
                   </li>
                 ))}
               </ul>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <Button variant="whatsapp" className="w-full">
-                  <MessageCircle size={16} /> Chat on WhatsApp
+                  <MessageCircle size={16} /> Enquire Now
                 </Button>
               </a>
             </div>

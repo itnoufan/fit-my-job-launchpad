@@ -1,38 +1,48 @@
-import { UserPlus, BookOpen, Briefcase, ArrowRight } from "lucide-react";
+import { UserPlus, BookOpen, Briefcase } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const steps = [
-  { num: "01", title: "Join Course", desc: "Pick your path", icon: UserPlus, emoji: "🚀" },
-  { num: "02", title: "Learn with Practice", desc: "Hands-on training", icon: BookOpen, emoji: "📚" },
-  { num: "03", title: "Get Job Support", desc: "Resume + interview + job", icon: Briefcase, emoji: "💼" },
+  { num: "01", title: "Join a Course", desc: "Pick the path that fits your career goals", icon: UserPlus },
+  { num: "02", title: "Learn by Doing", desc: "Hands-on training with real software & tools", icon: BookOpen },
+  { num: "03", title: "Get Hired", desc: "Resume prep, interview coaching & job placement", icon: Briefcase },
 ];
 
 const HowItWorksSection = () => (
   <section className="section-padding bg-gradient-warm" id="how-it-works">
-    <div className="container space-y-12">
+    <div className="container max-w-3xl space-y-12">
       <ScrollReveal>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-foreground">
-          Simple <span className="text-gradient">3-Step</span> Process
-        </h2>
+        <div className="text-center space-y-3">
+          <p className="eyebrow">How It Works</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
+            Three Steps to Your New Career
+          </h2>
+        </div>
       </ScrollReveal>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2 max-w-4xl mx-auto">
-        {steps.map(({ num, title, desc, icon: Icon, emoji }, i) => (
-          <ScrollReveal key={num} delay={i * 0.15} className="w-full md:w-auto">
-            <div className="flex items-center gap-2 md:gap-4">
-              <div className="bg-card rounded-2xl p-6 text-center space-y-3 card-elevated card-hover flex-1 md:w-56">
-                <div className="text-4xl">{emoji}</div>
-                <div className="mx-auto w-12 h-12 rounded-2xl bg-gradient-cta flex items-center justify-center">
-                  <Icon size={22} className="text-white" />
+
+      <div className="relative">
+        {/* Timeline line */}
+        <div className="hidden md:block absolute left-[27px] top-8 bottom-8 w-px bg-border" />
+
+        <div className="space-y-6">
+          {steps.map(({ num, title, desc, icon: Icon }, i) => (
+            <ScrollReveal key={num} delay={i * 0.12}>
+              <div className="flex gap-5 md:gap-7 items-start">
+                {/* Number circle */}
+                <div className="relative z-10 shrink-0 w-14 h-14 rounded-full bg-card border-2 border-primary/20 flex items-center justify-center">
+                  <span className="text-sm font-bold text-primary">{num}</span>
                 </div>
-                <h3 className="font-bold text-lg text-foreground">{title}</h3>
-                <p className="text-sm text-muted-foreground">{desc}</p>
+                {/* Content card */}
+                <div className="flex-1 bg-card rounded-2xl p-6 card-elevated card-hover">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Icon size={18} className="text-primary" />
+                    <h3 className="font-semibold text-base text-foreground">{title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+                </div>
               </div>
-              {i < steps.length - 1 && (
-                <ArrowRight size={24} className="text-primary/30 hidden md:block shrink-0" />
-              )}
-            </div>
-          </ScrollReveal>
-        ))}
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </div>
   </section>
