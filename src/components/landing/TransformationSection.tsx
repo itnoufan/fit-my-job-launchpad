@@ -1,8 +1,16 @@
-import { XCircle, CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
-const before = ["Confused", "No skills", "No job"];
-const after = ["Skilled", "Confident", "Employed"];
+const before = [
+  { emoji: "😕", text: "No Skills" },
+  { emoji: "😕", text: "No Job" },
+  { emoji: "😕", text: "Confusion" },
+];
+const after = [
+  { emoji: "🔥", text: "Skilled" },
+  { emoji: "🔥", text: "Confident" },
+  { emoji: "🔥", text: "Working" },
+];
 
 const TransformationSection = () => (
   <section className="section-padding bg-surface">
@@ -16,9 +24,9 @@ const TransformationSection = () => (
         <div className="grid grid-cols-[1fr_auto_1fr] gap-3 md:gap-6 items-stretch">
           <div className="bg-destructive/5 border border-destructive/10 rounded-2xl p-5 md:p-6 space-y-4">
             <p className="font-extrabold text-destructive text-sm md:text-base">Before</p>
-            {before.map((b) => (
-              <div key={b} className="flex items-center gap-2 text-sm text-muted-foreground">
-                <XCircle size={15} className="text-destructive shrink-0" /> {b}
+            {before.map(({ emoji, text }) => (
+              <div key={text} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="text-lg">{emoji}</span> {text}
               </div>
             ))}
           </div>
@@ -29,9 +37,9 @@ const TransformationSection = () => (
           </div>
           <div className="bg-accent/5 border border-accent/10 rounded-2xl p-5 md:p-6 space-y-4">
             <p className="font-extrabold text-accent text-sm md:text-base">After</p>
-            {after.map((a) => (
-              <div key={a} className="flex items-center gap-2 text-sm text-foreground">
-                <CheckCircle2 size={15} className="text-accent shrink-0" /> {a}
+            {after.map(({ emoji, text }) => (
+              <div key={text} className="flex items-center gap-2 text-sm text-foreground">
+                <span className="text-lg">{emoji}</span> {text}
               </div>
             ))}
           </div>

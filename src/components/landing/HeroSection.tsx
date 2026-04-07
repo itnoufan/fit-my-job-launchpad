@@ -1,12 +1,17 @@
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
 import ScrollReveal from "./ScrollReveal";
 import WHATSAPP_URL from "./whatsapp";
 
+const badges = [
+  { emoji: "🔥", text: "Job Support" },
+  { emoji: "💼", text: "Practical Training" },
+  { emoji: "🌍", text: "UAE Opportunities" },
+];
+
 const HeroSection = () => (
   <section className="relative bg-gradient-hero overflow-hidden min-h-screen flex items-center">
-    {/* Soft glow orbs */}
     <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full bg-primary glow-orb" />
     <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] rounded-full bg-accent glow-orb" />
     <div className="absolute top-0 right-1/3 w-[300px] h-[300px] rounded-full bg-warm glow-orb" />
@@ -23,14 +28,14 @@ const HeroSection = () => (
 
           <ScrollReveal delay={0.1}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight text-foreground">
-              Don't Just Study.{" "}
+              Get Job-Ready Skills.{" "}
               <span className="text-gradient">Get Hired.</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-              Learn real skills. Work with real tools. Build a career in HR & Office Management.
+              HR & Office Management training with real tools, real practice, and job support in India & UAE.
             </p>
           </ScrollReveal>
 
@@ -44,11 +49,7 @@ const HeroSection = () => (
 
           <ScrollReveal delay={0.4}>
             <div className="flex flex-wrap gap-3">
-              {[
-                { emoji: "🔥", text: "100% Job Support" },
-                { emoji: "🌍", text: "UAE Opportunities" },
-                { emoji: "💼", text: "Practical Training" },
-              ].map(({ emoji, text }) => (
+              {badges.map(({ emoji, text }) => (
                 <div key={text} className="glass-light rounded-full px-4 py-2 text-sm text-muted-foreground flex items-center gap-2">
                   <span>{emoji}</span> {text}
                 </div>
