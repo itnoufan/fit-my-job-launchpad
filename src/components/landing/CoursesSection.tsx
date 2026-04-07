@@ -54,8 +54,10 @@ const courses: Course[] = [
 ];
 
 const CoursesSection = () => (
-  <section className="section-padding bg-gradient-soft" id="courses">
-    <div className="container space-y-12">
+  <section className="section-padding bg-gradient-soft relative overflow-hidden" id="courses">
+    <div className="blob w-[500px] h-[500px] bg-primary -bottom-40 -left-40 animate-blob" />
+
+    <div className="container relative z-10 space-y-12">
       <ScrollReveal>
         <div className="text-center space-y-3">
           <p className="eyebrow">Programs</p>
@@ -71,14 +73,16 @@ const CoursesSection = () => (
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {courses.map((c, i) => (
           <ScrollReveal key={c.title + c.mode} delay={i * 0.06}>
-            <div className={`relative bg-card rounded-2xl p-6 card-elevated card-hover flex flex-col h-full ${c.featured ? 'ring-2 ring-primary/15' : ''}`}>
+            <div className={`relative bg-card rounded-2xl p-6 card-hover flex flex-col h-full overflow-hidden ${c.featured ? 'card-featured-glow card-gradient-border' : 'card-elevated'}`}>
               {c.tag && (
-                <span className="absolute -top-3 right-4 bg-primary text-primary-foreground text-xs font-semibold px-3.5 py-1 rounded-full">
-                  {c.tag}
-                </span>
+                <div className="absolute top-0 right-0">
+                  <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-xs font-semibold px-4 py-1.5 rounded-bl-xl rounded-tr-2xl">
+                    {c.tag}
+                  </div>
+                </div>
               )}
-              <div className="w-10 h-10 rounded-lg bg-primary/8 flex items-center justify-center mb-4">
-                <c.icon size={20} className="text-primary" />
+              <div className={`w-10 h-10 rounded-lg ${c.featured ? 'icon-gradient-primary' : 'icon-gradient-accent'} flex items-center justify-center mb-4`}>
+                <c.icon size={20} className={c.featured ? 'text-primary' : 'text-accent'} />
               </div>
               <h3 className="font-semibold text-lg text-foreground">{c.title}</h3>
               <div className="flex items-center gap-2 mb-4 mt-1">

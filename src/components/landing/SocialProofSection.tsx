@@ -21,8 +21,10 @@ const testimonials = [
 ];
 
 const SocialProofSection = () => (
-  <section className="section-padding">
-    <div className="container space-y-12">
+  <section className="section-padding relative overflow-hidden">
+    <div className="blob w-[400px] h-[400px] bg-primary -bottom-32 left-1/4 animate-blob" />
+
+    <div className="container relative z-10 space-y-12">
       <ScrollReveal>
         <div className="text-center space-y-3">
           <p className="eyebrow">Student Stories</p>
@@ -32,21 +34,30 @@ const SocialProofSection = () => (
         </div>
       </ScrollReveal>
 
-      <div className="grid md:grid-cols-3 gap-5">
+      <div className="grid md:grid-cols-3 gap-5 items-start">
         {testimonials.map((t, i) => (
           <ScrollReveal key={t.name} delay={i * 0.1}>
-            <div className={`bg-card rounded-2xl p-6 md:p-7 card-elevated card-hover h-full flex flex-col ${t.featured ? 'ring-1 ring-primary/10 md:scale-[1.02]' : ''}`}>
-              <Quote size={24} className="text-primary/15 mb-4" />
-              <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                {t.quote}
-              </p>
-              <div className="flex items-center gap-3 mt-6 pt-5 border-t border-border">
-                <div className="w-9 h-9 rounded-full bg-primary/8 flex items-center justify-center text-xs font-semibold text-primary">
-                  {t.name.charAt(0)}{t.name.split(" ")[1]?.charAt(0)}
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
+            <div className={`relative bg-card rounded-2xl p-6 md:p-7 card-hover h-full flex flex-col overflow-hidden ${
+              t.featured
+                ? 'card-featured-glow card-gradient-border md:-mt-2 md:mb-2'
+                : 'card-elevated'
+            }`}>
+              {/* Watermark quote */}
+              <Quote size={80} className="absolute -top-2 -right-2 text-primary/[0.04] rotate-12" strokeWidth={1} />
+
+              <div className="relative z-10">
+                <Quote size={20} className="text-primary/20 mb-4" />
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                  {t.quote}
+                </p>
+                <div className="flex items-center gap-3 mt-6 pt-5 border-t border-border">
+                  <div className="w-9 h-9 rounded-full icon-gradient-primary flex items-center justify-center text-xs font-semibold text-primary">
+                    {t.name.charAt(0)}{t.name.split(" ")[1]?.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm text-foreground">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.role}</p>
+                  </div>
                 </div>
               </div>
             </div>

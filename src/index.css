@@ -67,50 +67,125 @@
 }
 
 @layer utilities {
+  /* ─── Premium text gradient ─── */
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(250 65% 55%), hsl(280 60% 55%), hsl(35 80% 55%));
+    background-image: linear-gradient(135deg, hsl(250 60% 58%), hsl(280 50% 52%), hsl(35 75% 52%));
   }
 
+  /* ─── Section backgrounds with depth ─── */
   .bg-gradient-hero {
-    background: linear-gradient(160deg, hsl(250 30% 97%), hsl(0 0% 100%), hsl(30 30% 98%));
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 40%, hsl(250 40% 95% / 0.6), transparent),
+      radial-gradient(ellipse 60% 50% at 80% 20%, hsl(30 40% 96% / 0.5), transparent),
+      linear-gradient(160deg, hsl(250 30% 97%), hsl(0 0% 100%), hsl(30 30% 98%));
   }
   .bg-gradient-soft {
-    background: linear-gradient(180deg, hsl(var(--surface)), hsl(0 0% 100%));
+    background:
+      radial-gradient(ellipse 70% 50% at 30% 80%, hsl(250 30% 96% / 0.4), transparent),
+      linear-gradient(180deg, hsl(var(--surface)), hsl(0 0% 100%));
   }
   .bg-gradient-warm {
-    background: linear-gradient(180deg, hsl(var(--surface-warm)), hsl(0 0% 100%));
+    background:
+      radial-gradient(ellipse 60% 40% at 70% 30%, hsl(30 40% 96% / 0.5), transparent),
+      linear-gradient(180deg, hsl(var(--surface-warm)), hsl(0 0% 100%));
   }
 
+  /* ─── Glass ─── */
   .glass-light {
     background: hsl(0 0% 100% / 0.7);
     backdrop-filter: blur(20px);
     border: 1px solid hsl(0 0% 0% / 0.04);
   }
 
+  /* ─── Layout ─── */
   .section-padding {
     @apply px-5 py-16 md:px-8 md:py-24;
   }
 
+  /* ─── Eyebrow ─── */
   .eyebrow {
     @apply text-xs font-semibold uppercase tracking-widest text-primary;
   }
 
+  /* ─── Cards with layered depth ─── */
   .card-elevated {
     box-shadow:
-      0 0 0 1px hsl(var(--border) / 0.5),
-      0 2px 12px -4px hsl(220 25% 8% / 0.05),
-      0 8px 32px -8px hsl(220 25% 8% / 0.03);
+      0 0 0 1px hsl(var(--border) / 0.4),
+      0 1px 3px -1px hsl(220 25% 8% / 0.04),
+      0 4px 16px -4px hsl(220 25% 8% / 0.04),
+      0 12px 40px -8px hsl(220 25% 8% / 0.02);
   }
   .card-hover {
-    @apply transition-all duration-300 ease-out;
+    @apply transition-all duration-400 ease-out;
   }
   .card-hover:hover {
     transform: translateY(-2px);
     box-shadow:
-      0 0 0 1px hsl(var(--border) / 0.6),
-      0 6px 24px -6px hsl(220 25% 8% / 0.08),
-      0 16px 48px -12px hsl(220 25% 8% / 0.04);
+      0 0 0 1px hsl(var(--border) / 0.5),
+      0 4px 12px -2px hsl(220 25% 8% / 0.06),
+      0 12px 36px -8px hsl(220 25% 8% / 0.05),
+      0 24px 60px -16px hsl(220 25% 8% / 0.03);
+  }
+
+  /* ─── Premium card with gradient border ─── */
+  .card-gradient-border {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: 1rem;
+  }
+  .card-gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(250 55% 52% / 0.2), hsl(165 55% 42% / 0.15), hsl(35 85% 55% / 0.2));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* ─── Featured glow ─── */
+  .card-featured-glow {
+    box-shadow:
+      0 0 0 1px hsl(250 55% 52% / 0.15),
+      0 4px 20px -4px hsl(250 55% 52% / 0.1),
+      0 12px 40px -8px hsl(250 55% 52% / 0.06);
+  }
+
+  /* ─── Decorative blob ─── */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  /* ─── Gradient icon container ─── */
+  .icon-gradient-primary {
+    background: linear-gradient(135deg, hsl(250 55% 52% / 0.1), hsl(280 50% 52% / 0.06));
+  }
+  .icon-gradient-accent {
+    background: linear-gradient(135deg, hsl(165 55% 42% / 0.1), hsl(165 60% 50% / 0.06));
+  }
+  .icon-gradient-warm {
+    background: linear-gradient(135deg, hsl(35 85% 55% / 0.1), hsl(30 70% 50% / 0.06));
+  }
+
+  /* ─── Decorative watermark number ─── */
+  .watermark-number {
+    position: absolute;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 1;
+    color: hsl(var(--foreground) / 0.03);
+    pointer-events: none;
+    user-select: none;
   }
 
   .safe-area-bottom {
@@ -118,14 +193,23 @@
   }
 }
 
-/* Scroll reveal */
+/* ─── Animations ─── */
 @keyframes revealUp {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--whatsapp) / 0.4); }
-  50% { box-shadow: 0 0 0 10px hsl(var(--whatsapp) / 0); }
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--whatsapp) / 0.3); }
+  50% { box-shadow: 0 0 0 12px hsl(var(--whatsapp) / 0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes blobDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(10px, -15px) scale(1.05); }
+  66% { transform: translate(-8px, 8px) scale(0.95); }
 }
 
 .animate-reveal {
@@ -133,6 +217,8 @@
   opacity: 0;
 }
 .animate-pulse-glow { animation: pulseGlow 2.5s infinite; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-blob { animation: blobDrift 12s ease-in-out infinite; }
 
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.2s; }
