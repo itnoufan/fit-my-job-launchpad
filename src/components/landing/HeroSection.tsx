@@ -1,75 +1,71 @@
+import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Phone, MessageCircle, ShieldCheck, Wrench, Award } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 import ScrollReveal from "./ScrollReveal";
-
-const badges = [
-  { icon: ShieldCheck, text: "100% Job Support" },
-  { icon: Wrench, text: "Practical Training" },
-  { icon: Award, text: "Industry Certifications" },
-];
+import WHATSAPP_URL from "./whatsapp";
 
 const HeroSection = () => (
-  <section className="relative bg-gradient-hero overflow-hidden min-h-[90vh] flex items-center">
-    {/* Decorative orbs */}
-    <div className="absolute top-20 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-vibrant opacity-10 blur-3xl" />
-    <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-accent/10 blur-3xl" />
+  <section className="relative bg-gradient-hero overflow-hidden min-h-screen flex items-center">
+    {/* Glow orbs */}
+    <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full bg-primary glow-orb" />
+    <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] rounded-full bg-accent glow-orb" />
+    <div className="absolute top-0 right-1/3 w-[300px] h-[300px] rounded-full bg-warm glow-orb opacity-10" />
 
-    <div className="container relative z-10 section-padding pt-28">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8 max-w-xl">
+    <div className="container relative z-10 pt-24 pb-16 md:pt-32 md:pb-24">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="space-y-8 max-w-lg">
           <ScrollReveal>
-            <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-xs font-medium text-primary-foreground/80">
-              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+            <div className="inline-flex items-center gap-2 glass-dark rounded-full px-4 py-2 text-xs font-medium text-white/70">
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               Now Enrolling — Limited Seats
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.1] tracking-tight text-primary-foreground">
-              Build a High-Paying Career in HR & Office Management —{" "}
-              <span className="text-gradient">Even If You're Starting From Zero</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight text-white">
+              Don't Just Study.{" "}
+              <span className="text-gradient">Get Hired.</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <p className="text-lg md:text-xl text-primary-foreground/65 leading-relaxed">
-              Get job-ready with practical training, real tools, and placement support in India & UAE.
+            <p className="text-lg md:text-xl leading-relaxed" style={{ color: "hsl(220 15% 60%)" }}>
+              Learn real skills. Work with real tools. Build a career in HR & Office Management.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="gradient" size="xl">
-                <Phone size={20} /> Book Free Career Consultation
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="whatsapp" size="xl" className="w-full sm:w-auto">
+                <MessageCircle size={22} /> Chat on WhatsApp
               </Button>
-              <Button variant="whatsapp" size="lg">
-                <MessageCircle size={20} /> Chat on WhatsApp
-              </Button>
-            </div>
+            </a>
           </ScrollReveal>
 
           <ScrollReveal delay={0.4}>
-            <div className="flex flex-wrap gap-3 pt-2">
-              {badges.map(({ icon: Icon, text }) => (
-                <div key={text} className="glass rounded-full px-4 py-2 flex items-center gap-2 text-sm text-primary-foreground/80">
-                  <Icon size={15} className="text-accent" />
-                  {text}
+            <div className="flex flex-wrap gap-3">
+              {[
+                { emoji: "🔥", text: "100% Job Support" },
+                { emoji: "🌍", text: "UAE Opportunities" },
+                { emoji: "💼", text: "Practical Training" },
+              ].map(({ emoji, text }) => (
+                <div key={text} className="glass-dark rounded-full px-4 py-2 text-sm text-white/70 flex items-center gap-2">
+                  <span>{emoji}</span> {text}
                 </div>
               ))}
             </div>
           </ScrollReveal>
         </div>
 
-        <ScrollReveal delay={0.2} className="hidden lg:block">
+        <ScrollReveal delay={0.3} className="hidden lg:block">
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-vibrant rounded-3xl opacity-20 blur-2xl" />
+            <div className="absolute -inset-6 bg-gradient-cta rounded-3xl opacity-10 blur-3xl" />
             <img
               src={heroImage}
-              alt="Young professionals learning at the academy"
-              width={1152}
-              height={768}
-              className="relative rounded-2xl shadow-2xl"
+              alt="Young professionals learning and working"
+              width={1200}
+              height={800}
+              className="relative rounded-3xl shadow-2xl border border-white/5"
             />
           </div>
         </ScrollReveal>
