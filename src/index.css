@@ -117,7 +117,7 @@
       0 12px 40px -8px hsl(220 25% 8% / 0.02);
   }
   .card-hover {
-    @apply transition-all duration-400 ease-out;
+    @apply transition-all duration-300 ease-out;
   }
   .card-hover:hover {
     transform: translateY(-2px);
