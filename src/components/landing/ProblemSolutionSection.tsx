@@ -1,57 +1,57 @@
-import { XCircle, CheckCircle2, ArrowRight } from "lucide-react";
+import { XCircle, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const problems = [
-  { emoji: "😕", text: "No practical skills" },
-  { emoji: "😐", text: "No job calls" },
-  { emoji: "😔", text: "No clear direction" },
+  "No practical skills",
+  "No job callbacks",
+  "No clear career direction",
 ];
 
 const solutions = [
-  { emoji: "🔧", text: "Practical training" },
-  { emoji: "💻", text: "Real industry tools" },
-  { emoji: "🤝", text: "Job support until hired" },
+  "Hands-on practical training",
+  "Real industry tools & software",
+  "Job support until you're hired",
 ];
 
 const ProblemSolutionSection = () => (
   <section className="section-padding" id="why-us">
     <div className="container max-w-4xl space-y-10">
       <ScrollReveal>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-foreground">
-          From <span className="text-destructive">Stuck</span> to{" "}
-          <span className="text-gradient">Skilled</span>
-        </h2>
+        <div className="text-center space-y-3">
+          <p className="eyebrow">Why Students Choose Us</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
+            From <span className="text-destructive">Stuck</span> to{" "}
+            <span className="text-accent">Skilled</span>
+          </h2>
+        </div>
       </ScrollReveal>
 
-      <ScrollReveal delay={0.15}>
-        <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-6 items-stretch">
-          {/* Problem side */}
-          <div className="bg-destructive/[0.04] border border-destructive/10 rounded-3xl p-6 md:p-8 space-y-4">
-            <p className="font-extrabold text-destructive text-sm md:text-base uppercase tracking-wider">The Problem</p>
-            {problems.map(({ emoji, text }) => (
-              <div key={text} className="flex items-center gap-3 text-sm md:text-base text-muted-foreground">
-                <span className="text-xl shrink-0">{emoji}</span>
-                <span>{text}</span>
-              </div>
-            ))}
+      <ScrollReveal delay={0.1}>
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Problem */}
+          <div className="rounded-2xl border border-destructive/10 bg-destructive/[0.03] p-6 md:p-8 space-y-5">
+            <p className="text-sm font-semibold uppercase tracking-wider text-destructive">The Problem</p>
+            <ul className="space-y-4">
+              {problems.map((text) => (
+                <li key={text} className="flex items-start gap-3 text-sm text-muted-foreground">
+                  <XCircle size={18} className="text-destructive/60 mt-0.5 shrink-0" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Arrow */}
-          <div className="flex items-center justify-center py-1 md:py-0">
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-cta flex items-center justify-center shadow-lg rotate-90 md:rotate-0">
-              <ArrowRight size={22} className="text-white" />
-            </div>
-          </div>
-
-          {/* Solution side */}
-          <div className="bg-accent/[0.04] border border-accent/10 rounded-3xl p-6 md:p-8 space-y-4">
-            <p className="font-extrabold text-accent text-sm md:text-base uppercase tracking-wider">Our Solution</p>
-            {solutions.map(({ emoji, text }) => (
-              <div key={text} className="flex items-center gap-3 text-sm md:text-base text-foreground">
-                <span className="text-xl shrink-0">{emoji}</span>
-                <span>{text}</span>
-              </div>
-            ))}
+          {/* Solution */}
+          <div className="rounded-2xl border border-accent/10 bg-accent/[0.03] p-6 md:p-8 space-y-5">
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent">Our Solution</p>
+            <ul className="space-y-4">
+              {solutions.map((text) => (
+                <li key={text} className="flex items-start gap-3 text-sm text-foreground">
+                  <CheckCircle2 size={18} className="text-accent mt-0.5 shrink-0" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </ScrollReveal>

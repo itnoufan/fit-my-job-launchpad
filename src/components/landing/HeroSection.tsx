@@ -1,21 +1,17 @@
-import { MessageCircle, CheckCircle2 } from "lucide-react";
+import { MessageCircle, Award, Briefcase, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
 import ScrollReveal from "./ScrollReveal";
 import WHATSAPP_URL from "./whatsapp";
 
 const badges = [
-  { emoji: "🔥", text: "Job Support" },
-  { emoji: "💼", text: "Practical Training" },
-  { emoji: "🌍", text: "UAE Opportunities" },
+  { icon: Briefcase, text: "Job Support" },
+  { icon: Award, text: "UK Certified" },
+  { icon: Globe, text: "UAE Opportunities" },
 ];
 
 const HeroSection = () => (
   <section className="relative bg-gradient-hero overflow-hidden min-h-screen flex items-center">
-    <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full bg-primary glow-orb" />
-    <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] rounded-full bg-accent glow-orb" />
-    <div className="absolute top-0 right-1/3 w-[300px] h-[300px] rounded-full bg-warm glow-orb" />
-
     <div className="container relative z-10 pt-24 pb-16 md:pt-32 md:pb-24">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div className="space-y-8 max-w-lg">
@@ -49,9 +45,9 @@ const HeroSection = () => (
 
           <ScrollReveal delay={0.4}>
             <div className="flex flex-wrap gap-3">
-              {badges.map(({ emoji, text }) => (
+              {badges.map(({ icon: Icon, text }) => (
                 <div key={text} className="glass-light rounded-full px-4 py-2 text-sm text-muted-foreground flex items-center gap-2">
-                  <span>{emoji}</span> {text}
+                  <Icon size={14} className="text-primary" /> {text}
                 </div>
               ))}
             </div>
@@ -60,13 +56,13 @@ const HeroSection = () => (
 
         <ScrollReveal delay={0.3} className="hidden lg:block">
           <div className="relative">
-            <div className="absolute -inset-6 bg-gradient-cta rounded-3xl opacity-[0.06] blur-3xl" />
+            <div className="absolute -inset-4 rounded-3xl bg-primary/[0.04] blur-2xl" />
             <img
               src={heroImage}
               alt="Young professionals learning and working"
               width={1200}
               height={800}
-              className="relative rounded-3xl shadow-2xl border border-border/50"
+              className="relative rounded-3xl shadow-xl border border-border/50"
             />
           </div>
         </ScrollReveal>
