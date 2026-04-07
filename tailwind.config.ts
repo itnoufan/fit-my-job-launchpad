@@ -52,15 +52,13 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         surface: "hsl(var(--surface))",
+        "surface-warm": "hsl(var(--surface-warm))",
         whatsapp: {
           DEFAULT: "hsl(var(--whatsapp))",
           foreground: "hsl(var(--whatsapp-foreground))",
         },
         success: "hsl(var(--success))",
         warm: "hsl(var(--warm))",
-        "dark-bg": "hsl(var(--dark-bg))",
-        "dark-surface": "hsl(var(--dark-surface))",
-        "dark-card": "hsl(var(--dark-card))",
       },
       borderRadius: {
         lg: "var(--radius)",

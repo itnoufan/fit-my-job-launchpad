@@ -23,7 +23,7 @@ const StickyHeader = () => {
     >
       <div className="container flex items-center justify-between h-16 md:h-[4.5rem]">
         <a href="#" className="font-heading font-bold text-lg md:text-xl tracking-tight">
-          <span className={scrolled ? "text-foreground" : "text-white"}>Fit My Job</span>
+          <span className="text-foreground">Fit My Job</span>
           <span className="text-gradient"> Academy</span>
         </a>
 
@@ -32,9 +32,7 @@ const StickyHeader = () => {
             <a
               key={l}
               href={`#${l.toLowerCase().replace(/ /g, "-")}`}
-              className={`text-sm font-medium transition-colors ${
-                scrolled ? "text-muted-foreground hover:text-foreground" : "text-white/60 hover:text-white"
-              }`}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {l}
             </a>
@@ -47,7 +45,7 @@ const StickyHeader = () => {
         </nav>
 
         <button
-          className={`md:hidden p-2 rounded-xl transition-colors ${scrolled ? "text-foreground" : "text-white"}`}
+          className="md:hidden p-2 rounded-xl text-foreground transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >

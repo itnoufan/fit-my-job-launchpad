@@ -23,10 +23,10 @@ const testimonials = [
 ];
 
 const SocialProofSection = () => (
-  <section className="section-padding">
+  <section className="section-padding bg-surface">
     <div className="container space-y-12">
       <ScrollReveal>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-foreground">
           People Like You Are <span className="text-gradient">Already Winning</span>
         </h2>
       </ScrollReveal>
@@ -43,11 +43,11 @@ const SocialProofSection = () => (
                 "{t.quote}"
               </p>
               <div className="flex items-center gap-3 mt-5 pt-5 border-t border-border">
-                <div className="w-10 h-10 rounded-full bg-gradient-cta flex items-center justify-center text-xs font-bold text-white">
+                <div className="w-10 h-10 rounded-full bg-gradient-cta flex items-center justify-center text-xs font-bold text-primary-foreground">
                   {t.avatar}
                 </div>
                 <div>
-                  <p className="font-bold text-sm">{t.name}</p>
+                  <p className="font-bold text-sm text-foreground">{t.name}</p>
                   <p className="text-xs text-muted-foreground">{t.role}</p>
                 </div>
               </div>

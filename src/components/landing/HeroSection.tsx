@@ -6,30 +6,30 @@ import WHATSAPP_URL from "./whatsapp";
 
 const HeroSection = () => (
   <section className="relative bg-gradient-hero overflow-hidden min-h-screen flex items-center">
-    {/* Glow orbs */}
+    {/* Soft glow orbs */}
     <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full bg-primary glow-orb" />
     <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] rounded-full bg-accent glow-orb" />
-    <div className="absolute top-0 right-1/3 w-[300px] h-[300px] rounded-full bg-warm glow-orb opacity-10" />
+    <div className="absolute top-0 right-1/3 w-[300px] h-[300px] rounded-full bg-warm glow-orb" />
 
     <div className="container relative z-10 pt-24 pb-16 md:pt-32 md:pb-24">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div className="space-y-8 max-w-lg">
           <ScrollReveal>
-            <div className="inline-flex items-center gap-2 glass-dark rounded-full px-4 py-2 text-xs font-medium text-white/70">
+            <div className="inline-flex items-center gap-2 glass-light rounded-full px-4 py-2 text-xs font-medium text-muted-foreground">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               Now Enrolling — Limited Seats
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight text-foreground">
               Don't Just Study.{" "}
               <span className="text-gradient">Get Hired.</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <p className="text-lg md:text-xl leading-relaxed" style={{ color: "hsl(220 15% 60%)" }}>
+            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
               Learn real skills. Work with real tools. Build a career in HR & Office Management.
             </p>
           </ScrollReveal>
@@ -49,7 +49,7 @@ const HeroSection = () => (
                 { emoji: "🌍", text: "UAE Opportunities" },
                 { emoji: "💼", text: "Practical Training" },
               ].map(({ emoji, text }) => (
-                <div key={text} className="glass-dark rounded-full px-4 py-2 text-sm text-white/70 flex items-center gap-2">
+                <div key={text} className="glass-light rounded-full px-4 py-2 text-sm text-muted-foreground flex items-center gap-2">
                   <span>{emoji}</span> {text}
                 </div>
               ))}
@@ -59,13 +59,13 @@ const HeroSection = () => (
 
         <ScrollReveal delay={0.3} className="hidden lg:block">
           <div className="relative">
-            <div className="absolute -inset-6 bg-gradient-cta rounded-3xl opacity-10 blur-3xl" />
+            <div className="absolute -inset-6 bg-gradient-cta rounded-3xl opacity-[0.06] blur-3xl" />
             <img
               src={heroImage}
               alt="Young professionals learning and working"
               width={1200}
               height={800}
-              className="relative rounded-3xl shadow-2xl border border-white/5"
+              className="relative rounded-3xl shadow-2xl border border-border/50"
             />
           </div>
         </ScrollReveal>
