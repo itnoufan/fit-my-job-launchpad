@@ -27,7 +27,7 @@ const SocialProofSection = () => (
     <div className="container space-y-12">
       <ScrollReveal>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-foreground">
-          People Like You Are <span className="text-gradient">Already Winning</span>
+          Our Students Are <span className="text-gradient">Getting Jobs</span>
         </h2>
       </ScrollReveal>
       <div className="grid md:grid-cols-3 gap-5">

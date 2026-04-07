@@ -1,12 +1,11 @@
 import StickyHeader from "@/components/landing/StickyHeader";
 import HeroSection from "@/components/landing/HeroSection";
-import HookSection from "@/components/landing/HookSection";
-import ProblemSection from "@/components/landing/ProblemSection";
-import SolutionSection from "@/components/landing/SolutionSection";
+import WhatYouBecome from "@/components/landing/WhatYouBecome";
+import ProblemSolutionSection from "@/components/landing/ProblemSolutionSection";
+import HowItWorksSection from "@/components/landing/HowItWorksSection";
 import CoursesSection from "@/components/landing/CoursesSection";
 import ValueSection from "@/components/landing/ValueSection";
 import SocialProofSection from "@/components/landing/SocialProofSection";
-import HowItWorksSection from "@/components/landing/HowItWorksSection";
 import TransformationSection from "@/components/landing/TransformationSection";
 import LeadHookSection from "@/components/landing/LeadHookSection";
 import FinalCTASection from "@/components/landing/FinalCTASection";
@@ -17,13 +16,12 @@ const Index = () => (
   <>
     <StickyHeader />
     <HeroSection />
-    <HookSection />
-    <ProblemSection />
-    <SolutionSection />
+    <WhatYouBecome />
+    <ProblemSolutionSection />
+    <HowItWorksSection />
     <CoursesSection />
     <ValueSection />
     <SocialProofSection />
-    <HowItWorksSection />
     <TransformationSection />
     <LeadHookSection />
     <FinalCTASection />

@@ -23,7 +23,7 @@ const Footer = () => (
       <div className="space-y-3">
         <h4 className="font-heading font-semibold text-sm" style={{ color: "hsl(var(--footer-heading))" }}>Contact</h4>
         <div className="text-sm space-y-2" style={{ color: "hsl(var(--footer-text))" }}>
-          <p className="flex items-center gap-2"><Phone size={13} /> +91 XXXXX XXXXX</p>
+          <p className="flex items-center gap-2"><Phone size={13} /> +91 97464 86969</p>
           <p className="flex items-center gap-2"><Mail size={13} /> info@fitmyjob.com</p>
           <p className="flex items-center gap-2"><MapPin size={13} /> India & UAE</p>
         </div>

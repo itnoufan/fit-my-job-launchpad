@@ -6,6 +6,7 @@ import WHATSAPP_URL from "./whatsapp";
 interface Course {
   title: string;
   mode: string;
+  badge?: string;
   emoji: string;
   features: string[];
   tag?: string;
@@ -15,21 +16,29 @@ const courses: Course[] = [
   {
     title: "UAE HR Management",
     mode: "Offline",
+    badge: "Classroom Training",
     emoji: "🔥",
     features: ["UK Certification", "UAE Internship (Optional)", "HRMS + Compliance", "Industrial Visit", "Job Support"],
     tag: "Most Popular",
   },
   {
+    title: "UAE HR Management",
+    mode: "Online",
+    badge: "Live Online Training",
+    emoji: "💻",
+    features: ["UK Certification", "HRMS + Compliance", "UAE Exposure", "Job Support"],
+  },
+  {
     title: "HR Management",
     mode: "Online",
     emoji: "💻",
-    features: ["Live Classes", "Case Studies", "Job Support"],
+    features: ["Live Classes", "HRMS + Case Studies", "Job Support"],
   },
   {
     title: "Office Administration",
     mode: "Offline",
     emoji: "🧾",
-    features: ["Excel + AI Tools", "Basic Accounting", "Job Assurance"],
+    features: ["Excel, Word, PPT", "AI Tools", "Basic Accounting", "Job Assurance"],
   },
   {
     title: "Office Administration",
@@ -52,6 +61,9 @@ const CoursesSection = () => (
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-foreground">
           Our <span className="text-gradient">Courses</span>
         </h2>
+        <p className="text-center text-muted-foreground mt-3 max-w-lg mx-auto">
+          Choose the path that fits your goals
+        </p>
       </ScrollReveal>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {courses.map((c, i) => (
@@ -64,7 +76,12 @@ const CoursesSection = () => (
               )}
               <div className="text-3xl mb-3">{c.emoji}</div>
               <h3 className="font-bold text-lg text-foreground">{c.title}</h3>
-              <span className="text-xs font-bold uppercase tracking-widest mb-4 text-muted-foreground">{c.mode}</span>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{c.mode}</span>
+                {c.badge && (
+                  <span className="text-[10px] font-semibold bg-primary/10 text-primary px-2 py-0.5 rounded-full">{c.badge}</span>
+                )}
+              </div>
               <ul className="space-y-2.5 flex-1 mb-6">
                 {c.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground">
