@@ -1,4 +1,4 @@
-import { MessageCircle, Award, Briefcase, Globe, Users, Star } from "lucide-react";
+import { MessageCircle, Award, Briefcase, Globe, Users, Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
 import ScrollReveal from "./ScrollReveal";
@@ -18,7 +18,6 @@ const stats = [
 
 const HeroSection = () => (
   <section className="relative bg-gradient-hero overflow-hidden min-h-screen flex items-center">
-    {/* Decorative blobs */}
     <div className="blob w-[500px] h-[500px] bg-primary -top-40 -left-40 animate-blob" />
     <div className="blob w-[400px] h-[400px] bg-warm top-20 right-0 animate-blob" style={{ animationDelay: '4s' }} />
     <div className="blob w-[300px] h-[300px] bg-accent bottom-0 left-1/3 animate-blob" style={{ animationDelay: '8s' }} />
@@ -48,8 +47,18 @@ const HeroSection = () => (
 
           <ScrollReveal delay={0.3}>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              <Button variant="whatsapp" size="xl" className="w-full sm:w-auto">
-                <MessageCircle size={22} /> Chat on WhatsApp
+              <Button variant="whatsapp" size="xl" className="group relative w-full sm:w-auto overflow-hidden shadow-[0_4px_24px_-4px_hsl(142_62%_38%/0.4)]">
+                {/* Shimmer sweep */}
+                <span
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.3) 50%, transparent 60%)",
+                    animation: "shimmer 3s ease-in-out infinite",
+                  }}
+                />
+                <MessageCircle size={22} className="relative z-10" />
+                <span className="relative z-10">Chat on WhatsApp</span>
+                <ArrowRight size={18} className="relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
               </Button>
             </a>
           </ScrollReveal>

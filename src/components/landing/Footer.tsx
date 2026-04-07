@@ -1,15 +1,13 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => (
   <footer className="relative px-5 py-14 md:px-8" style={{ background: "hsl(var(--footer-bg))" }} id="contact">
-    {/* Gradient top border */}
     <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
     <div className="container grid sm:grid-cols-2 md:grid-cols-4 gap-8">
       <div className="sm:col-span-2 md:col-span-1 space-y-3">
-        <p className="font-heading font-bold text-lg" style={{ color: "hsl(var(--footer-heading))" }}>
-          Fit My Job <span className="text-gradient">Academy</span>
-        </p>
+        <img src={logo} alt="Fit My Job Academy" className="h-10 w-auto brightness-0 invert opacity-90" />
         <p className="text-sm leading-relaxed" style={{ color: "hsl(var(--footer-text))" }}>
           Focused on skill-based education and employability.
         </p>
