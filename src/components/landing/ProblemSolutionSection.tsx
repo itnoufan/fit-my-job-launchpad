@@ -24,31 +24,31 @@ const ProblemSolutionSection = () => (
       </ScrollReveal>
 
       <ScrollReveal delay={0.15}>
-        <div className="grid grid-cols-[1fr_auto_1fr] gap-3 md:gap-6 items-stretch">
+        <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-6 items-stretch">
           {/* Problem side */}
-          <div className="bg-destructive/[0.04] border border-destructive/10 rounded-3xl p-5 md:p-8 space-y-5">
+          <div className="bg-destructive/[0.04] border border-destructive/10 rounded-3xl p-6 md:p-8 space-y-4">
             <p className="font-extrabold text-destructive text-sm md:text-base uppercase tracking-wider">The Problem</p>
             {problems.map(({ emoji, text }) => (
               <div key={text} className="flex items-center gap-3 text-sm md:text-base text-muted-foreground">
-                <span className="text-xl">{emoji}</span>
+                <span className="text-xl shrink-0">{emoji}</span>
                 <span>{text}</span>
               </div>
             ))}
           </div>
 
           {/* Arrow */}
-          <div className="flex items-center justify-center">
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-cta flex items-center justify-center shadow-lg">
+          <div className="flex items-center justify-center py-1 md:py-0">
+            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-cta flex items-center justify-center shadow-lg rotate-90 md:rotate-0">
               <ArrowRight size={22} className="text-white" />
             </div>
           </div>
 
           {/* Solution side */}
-          <div className="bg-accent/[0.04] border border-accent/10 rounded-3xl p-5 md:p-8 space-y-5">
+          <div className="bg-accent/[0.04] border border-accent/10 rounded-3xl p-6 md:p-8 space-y-4">
             <p className="font-extrabold text-accent text-sm md:text-base uppercase tracking-wider">Our Solution</p>
             {solutions.map(({ emoji, text }) => (
               <div key={text} className="flex items-center gap-3 text-sm md:text-base text-foreground">
-                <span className="text-xl">{emoji}</span>
+                <span className="text-xl shrink-0">{emoji}</span>
                 <span>{text}</span>
               </div>
             ))}
