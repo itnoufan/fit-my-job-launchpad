@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
 import WHATSAPP_URL from "./whatsapp";
+import logo from "@/assets/logo.png";
 
 const StickyHeader = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,9 +23,8 @@ const StickyHeader = () => {
       }`}
     >
       <div className="container flex items-center justify-between h-16 md:h-[4.5rem]">
-        <a href="#" className="font-heading font-bold text-lg md:text-xl tracking-tight">
-          <span className="text-foreground">Fit My Job</span>
-          <span className="text-gradient"> Academy</span>
+        <a href="#" className="flex items-center gap-2">
+          <img src={logo} alt="Fit My Job Academy" className="h-10 md:h-12 w-auto" />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
@@ -38,7 +38,11 @@ const StickyHeader = () => {
             </a>
           ))}
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="whatsapp" size="sm">
+            <Button variant="whatsapp" size="sm" className="relative">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+              </span>
               <MessageCircle size={16} /> WhatsApp Us
             </Button>
           </a>
