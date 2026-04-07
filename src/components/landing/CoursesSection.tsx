@@ -18,7 +18,7 @@ const courses: Course[] = [
     mode: "Offline",
     badge: "Classroom Training",
     emoji: "🔥",
-    features: ["UK Certification", "UAE Internship (Optional)", "HRMS + Compliance", "Industrial Visit", "Job Support"],
+    features: ["UK Certification", "UAE Internship (Optional)", "HRMS + Compliance", "UAE Exposure", "Industrial Visit", "Job Support"],
     tag: "Most Popular",
   },
   {
@@ -26,31 +26,28 @@ const courses: Course[] = [
     mode: "Online",
     badge: "Live Online Training",
     emoji: "💻",
-    features: ["UK Certification", "HRMS + Compliance", "UAE Exposure", "Job Support"],
-  },
-  {
-    title: "HR Management",
-    mode: "Online",
-    emoji: "💻",
-    features: ["Live Classes", "HRMS + Case Studies", "Job Support"],
+    features: ["UK Certification", "UAE Internship (Optional)", "HRMS + Compliance", "UAE Exposure", "Job Support"],
   },
   {
     title: "Office Administration",
     mode: "Offline",
+    badge: "Classroom Training",
     emoji: "🧾",
     features: ["Excel, Word, PPT", "AI Tools", "Basic Accounting", "Job Assurance"],
   },
   {
     title: "Office Administration",
     mode: "Online",
+    badge: "Online Training",
     emoji: "🌐",
-    features: ["Office Tools", "Flexible Learning"],
+    features: ["Excel, Word, PPT", "AI Tools", "Basic Accounting", "Job Assurance"],
   },
   {
     title: "UAE Payroll",
     mode: "Live / Recorded",
+    badge: "Live + Self-Paced",
     emoji: "💰",
-    features: ["Salary Structure", "PF, ESI, TDS", "UAE Payroll"],
+    features: ["Salary Structure", "PF, ESI, TDS", "UAE Payroll", "Indian Labour Law", "UAE Labour Law"],
   },
 ];
 
