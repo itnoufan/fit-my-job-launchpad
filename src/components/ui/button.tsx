@@ -5,26 +5,26 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 active:scale-[0.97]",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg rounded-2xl",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-xl",
+        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-xl",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-xl",
+        ghost: "hover:bg-accent hover:text-accent-foreground rounded-xl",
         link: "text-primary underline-offset-4 hover:underline",
-        gradient: "bg-gradient-vibrant text-primary-foreground font-bold shadow-lg hover:shadow-xl hover:scale-[1.02]",
-        whatsapp: "bg-whatsapp text-whatsapp-foreground font-bold shadow-lg hover:shadow-xl hover:scale-[1.02]",
-        "glass-hero": "glass text-primary-foreground font-semibold hover:bg-white/15",
+        whatsapp: "bg-whatsapp text-whatsapp-foreground font-bold shadow-lg hover:shadow-xl hover:scale-[1.03] rounded-2xl",
+        gradient: "bg-gradient-cta text-primary-foreground font-bold shadow-lg hover:shadow-xl hover:scale-[1.03] rounded-2xl",
+        "glass-dark": "glass-dark text-white/90 font-medium hover:bg-white/10 rounded-2xl",
       },
       size: {
-        default: "h-10 px-5 py-2",
-        sm: "h-9 rounded-lg px-3",
-        lg: "h-12 rounded-xl px-8 text-base",
-        xl: "h-14 rounded-2xl px-10 text-lg",
-        icon: "h-10 w-10",
+        default: "h-11 px-6 py-2 text-sm",
+        sm: "h-9 rounded-xl px-4 text-xs",
+        lg: "h-13 px-8 py-3 text-base [&_svg]:size-5",
+        xl: "h-[3.5rem] px-10 py-4 text-lg [&_svg]:size-5",
+        icon: "h-10 w-10 rounded-xl",
       },
     },
     defaultVariants: {
