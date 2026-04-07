@@ -1,3 +1,4 @@
+import StickyHeader from "@/components/landing/StickyHeader";
 import HeroSection from "@/components/landing/HeroSection";
 import ProblemSection from "@/components/landing/ProblemSection";
 import SolutionSection from "@/components/landing/SolutionSection";
@@ -13,6 +14,7 @@ import FloatingButtons from "@/components/landing/FloatingButtons";
 
 const Index = () => (
   <>
+    <StickyHeader />
     <HeroSection />
     <ProblemSection />
     <SolutionSection />
