@@ -84,8 +84,11 @@ const CoursesSection = () => (
               <div className={`w-10 h-10 rounded-lg ${c.featured ? 'icon-gradient-primary' : 'icon-gradient-accent'} flex items-center justify-center mb-4`}>
                 <c.icon size={20} className={c.featured ? 'text-primary' : 'text-accent'} />
               </div>
-              <h3 className="text-gradient font-bold text-xl tracking-tight">{c.title}</h3>
-              <div className="w-8 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full mt-1" />
+              <div className="flex items-center gap-3">
+                <div className="w-[3px] h-8 rounded-full bg-gradient-to-b from-primary via-accent to-warm flex-shrink-0" />
+                <h3 className="text-gradient font-extrabold text-2xl tracking-tight leading-tight">{c.title}</h3>
+              </div>
+              <div className="w-12 h-1 bg-gradient-to-r from-primary via-accent to-warm rounded-full mt-2" />
               <div className="flex items-center gap-2 mb-4 mt-2">
                 <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">{c.mode}</span>
                 {c.badge && (
