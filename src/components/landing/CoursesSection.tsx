@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Award, Building2, FileSpreadsheet, Globe, DollarSign } from "lucide-react";
+import { MessageCircle, Award, Building2, FileSpreadsheet, Globe, DollarSign, Download } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import WHATSAPP_URL from "./whatsapp";
 
