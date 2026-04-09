@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Award, Building2, FileSpreadsheet, Globe, DollarSign } from "lucide-react";
+import { MessageCircle, Award, Building2, FileSpreadsheet, Globe, DollarSign, Download } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import WHATSAPP_URL from "./whatsapp";
 
@@ -84,8 +84,9 @@ const CoursesSection = () => (
               <div className={`w-10 h-10 rounded-lg ${c.featured ? 'icon-gradient-primary' : 'icon-gradient-accent'} flex items-center justify-center mb-4`}>
                 <c.icon size={20} className={c.featured ? 'text-primary' : 'text-accent'} />
               </div>
-              <h3 className="font-semibold text-lg text-foreground">{c.title}</h3>
-              <div className="flex items-center gap-2 mb-4 mt-1">
+              <h3 className="text-gradient font-bold text-xl tracking-tight">{c.title}</h3>
+              <div className="w-8 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full mt-1" />
+              <div className="flex items-center gap-2 mb-4 mt-2">
                 <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">{c.mode}</span>
                 {c.badge && (
                   <span className="text-[10px] font-medium bg-muted text-muted-foreground px-2 py-0.5 rounded-full">{c.badge}</span>
@@ -99,6 +100,11 @@ const CoursesSection = () => (
                   </li>
                 ))}
               </ul>
+              <a href="#brochure" className="block">
+                <Button variant="outline" className="w-full mb-2 border-primary/30 text-primary hover:bg-primary/5">
+                  <Download size={16} /> Download Brochure
+                </Button>
+              </a>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <Button variant="whatsapp" className="w-full">
                   <MessageCircle size={16} /> Enquire Now
