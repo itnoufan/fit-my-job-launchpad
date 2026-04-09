@@ -73,7 +73,7 @@ const CoursesSection = () => (
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {courses.map((c, i) => (
           <ScrollReveal key={c.title + c.mode} delay={i * 0.06}>
-            <div className={`relative bg-card rounded-2xl p-6 card-hover flex flex-col h-full overflow-hidden ${c.featured ? 'card-featured-glow card-gradient-border' : 'card-elevated'}`}>
+            <div className={`group relative bg-card rounded-2xl p-6 card-hover flex flex-col h-full overflow-hidden ${c.featured ? 'card-featured-glow card-gradient-border' : 'card-elevated'}`}>
               {c.tag && (
                 <div className="absolute top-0 right-0">
                   <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-xs font-semibold px-4 py-1.5 rounded-bl-xl rounded-tr-2xl">
@@ -81,8 +81,8 @@ const CoursesSection = () => (
                   </div>
                 </div>
               )}
-              <div className={`w-10 h-10 rounded-lg ${c.featured ? 'icon-gradient-primary' : 'icon-gradient-accent'} flex items-center justify-center mb-4`}>
-                <c.icon size={20} className={c.featured ? 'text-primary' : 'text-accent'} />
+              <div className={`w-14 h-14 rounded-2xl ${c.featured ? 'icon-gradient-primary ring-2 ring-primary/15 shadow-[0_0_20px_hsl(250_55%_52%/0.15)]' : 'icon-gradient-accent ring-2 ring-accent/10'} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <c.icon size={24} className={c.featured ? 'text-primary' : 'text-accent'} />
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-[3px] h-8 rounded-full bg-gradient-to-b from-primary via-accent to-warm flex-shrink-0" />
@@ -98,7 +98,9 @@ const CoursesSection = () => (
               <ul className="space-y-2.5 flex-1 mb-6">
                 {c.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                    <span className="text-accent mt-0.5">✓</span>
+                    <span className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-accent text-xs font-bold">✓</span>
+                    </span>
                     {f}
                   </li>
                 ))}
