@@ -100,6 +100,11 @@ const CoursesSection = () => (
                   </li>
                 ))}
               </ul>
+              <a href="#brochure" className="block">
+                <Button variant="outline" className="w-full mb-2 border-primary/30 text-primary hover:bg-primary/5">
+                  <Download size={16} /> Download Brochure
+                </Button>
+              </a>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <Button variant="whatsapp" className="w-full">
                   <MessageCircle size={16} /> Enquire Now
