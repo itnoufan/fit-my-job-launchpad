@@ -6,6 +6,7 @@ import HowItWorksSection from "@/components/landing/HowItWorksSection";
 import CoursesSection from "@/components/landing/CoursesSection";
 import ValueSection from "@/components/landing/ValueSection";
 import SocialProofSection from "@/components/landing/SocialProofSection";
+import PlacementsSection from "@/components/landing/PlacementsSection";
 import FinalCTASection from "@/components/landing/FinalCTASection";
 import Footer from "@/components/landing/Footer";
 import FloatingButtons from "@/components/landing/FloatingButtons";
@@ -20,6 +21,7 @@ const Index = () => (
     <CoursesSection />
     <ValueSection />
     <SocialProofSection />
+    <PlacementsSection />
     <FinalCTASection />
     <Footer />
     <FloatingButtons />

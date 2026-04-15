@@ -253,6 +253,18 @@
   animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
+/* ─── Marquee scroll ─── */
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-scroll-left { animation: scrollLeft 30s linear infinite; }
+.animate-scroll-right { animation: scrollRight 30s linear infinite; }
+
 /* ─── Mobile bar shimmer ─── */
 @keyframes barShimmer {
   0% { left: -30%; }
